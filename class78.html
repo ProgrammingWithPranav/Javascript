@@ -192,11 +192,12 @@
     fruits.pop();
     console.log(fruits);
     document.getElementById("remove_element_from_end_of_array").innerHTML = fruits;
-    //How declare array with first world country ? 
-
-    //How declare array with second world country ? 
 
     //use concat method to merge two arrays . the id to be refer for innerHTML is merge_two_arrays
+    var random_items = ["Scale", "Sharpie", "Marker", "Paper", "Book"];
+    var result = fruits.concat(random_items);
+    console.log(result);
+    document.getElementById("merge_two_arrays").innerHTML = result;
 
 </script>
 </html>
