@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>My Family Book</title>
+</head>
+
+<body>
+    <h1>My Family Book</h1>
+    <img id="imgToChange" src="FrontPage.png">
+    <h3 id="imgText">Front Page</h3>
+    <br>
+    <br>
+    <input onClick="nextImg()" type="button" value="Next">
+</body>
+
+<script>
+    var images = ["FrontPage.png", "dad.png", "mom.png"];
+    var texts = ["Front Page", "Father", "Mother"];
+
+    var i = 0;
+
+    function nextImg() {
+        if (i == 3) {
+            i = 0;
+        }
+        document.getElementById("imgToChange").src = images[i];
+        document.getElementById("imgText").innerHTML = texts[i];
+        i++;
+    }
+</script>
+
+</html>
