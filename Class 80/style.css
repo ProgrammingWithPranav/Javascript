@@ -1,0 +1,13 @@
+body{
+    text-align: center;
+}
+input{
+    background-color: aqua;
+}
+#sort{
+    display: none;
+}
+
+#join{
+    display: none;
+}
