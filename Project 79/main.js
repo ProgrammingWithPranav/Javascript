@@ -27,5 +27,5 @@ function add_item() {
         htmlData = htmlData + '<div class="card">' + '<img src="images/pizzaImg.png"/>' + menu_list_array[i] + '</div>';
     }
     htmlData = htmlData + "</section>";
-    document.getElementById("display_menu").innerHTML = htmlData;
+    document.getElementById("display_addedmenu").innerHTML = htmlData;
 }
