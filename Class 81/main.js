@@ -26,6 +26,7 @@ function circle(mouse_x, mouse_y) {
     ctx.stroke();
 }
 
-function clear() {
+function emptyCanvas() {
+    console.log("Clear function is being called!");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
