@@ -8,14 +8,53 @@ radius = 1;
 var last_touch_pos_x;
 var last_touch_pos_y;
 
-var dropdown = document.getElementById("myDropdown");
-var dropdownValue = dropdown.value;
-
 canvas.addEventListener("touchstart", m_touchStart);
 canvas.addEventListener("touchmove", m_touchMove);
 
+canvas.addEventListener("mouseup", myMouseUp);
+canvas.addEventListener("mousedown", myMouseDown);
+canvas.addEventListener("mousemove", myMouseMove);
+canvas.addEventListener("mouseleave", myMouseLeave);
+
 screenWidth = screen.width - 70;
 screenHeight = screen.height - 300;
+
+last_mouse_action = "";
+
+function myMouseUp(e){
+    last_mouse_action = "mouseUp";
+}
+
+function myMouseDown(e){
+    last_mouse_action = "mouseDown";
+}
+
+function myMouseMove(e){
+    colour = document.getElementById("colour_input").value;
+    width = document.getElementById("width_input").value;
+
+    current_mouse_pos_x = e.clientX - canvas.offsetLeft;
+    current_mouse_pos_y = e.clientY - canvas.offsetTop;
+
+    if(last_mouse_action == "mouseDown"){
+        ctx.beginPath();
+        ctx.strokeStyle = colour;
+        ctx.lineWidth = width;
+
+        ctx.moveTo(last_mouse_pos_x, last_mouse_pos_y);
+
+        ctx.lineTo(current_mouse_pos_x, current_mouse_pos_y);
+
+        ctx.stroke();
+    }
+
+    last_mouse_pos_x = current_mouse_pos_x;
+    last_mouse_pos_y = current_mouse_pos_y;
+}
+
+function myMouseLeave(e){
+    last_mouse_action = "mouseLeave";
+}
 
 if(screen.width < 992){
     document.getElementById("myCanvas").width = screenWidth;
