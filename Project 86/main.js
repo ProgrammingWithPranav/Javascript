@@ -1,4 +1,4 @@
-var canvas = new fabric.canvas("myCanvas");
+var canvas = new fabric.Canvas("myCanvas");
 
 block_width = 30;
 block_height = 30;
